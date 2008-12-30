@@ -49,7 +49,7 @@ Plugins.define "Insulter" do
     else
       insult = "#{args[:cmd_args][0]} - #{insult}"
       if(args[:buddy] == args[:speaker])
-        @bot.send_im_to("[nes167]", insult)
+        @bot.send_im_to(BotConfig::BlastGroup, insult)
       else
         args[:buddy].send_im(insult)
       end
