@@ -19,11 +19,6 @@ Plugins.define "AI" do
     buddy.send_im(get_alice_response(message))
   end
   
-  def get_eliza_response(msg)
-    response = Net::HTTP.post_form(URI.parse("http://www-ai.ijs.si/eliza-cgi-bin/eliza_script"), {'Entry1'=>msg})
-    return response.body.split("</strong>\n").last.split("\n").first
-  end
-  
   def get_alice_response(msg)
     botid = "f5d922d97e345aa1"
     botcust = "a47d79b2be70536d"

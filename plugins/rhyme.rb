@@ -6,14 +6,18 @@ Plugins.define "Rhyme" do
   version "0.0.1"
     
   def public_rhyme(args)
-    if args[:cmd_args].size > 0
-      word = args[:cmd_args].first
-      rhymes = get_rhymes(word)
-      
-      args[:buddy].send_im("Words that rhyme with #{word} are: #{rhymes}") if rhymes.size > 0
-      args[:buddy].send_im("There are no words that rhyme with #{word}!") if rhymes.size == 0
-    else
+    if args[:cmd_args].size == 0
       args[:buddy].send_im('Would help if you gave me a word to rhyme!')
+      return
+    end
+    
+    word = args[:cmd_args].first
+    rhymes = get_rhymes(word)
+    
+    if rhymes.size > 0
+      args[:buddy].send_im("Words that rhyme with #{word} are: #{rhymes}")
+    else
+      args[:buddy].send_im("There are no words that rhyme with #{word}!")
     end
   end
   

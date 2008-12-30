@@ -3,18 +3,18 @@ Plugins.define "Insulter" do
   desc "Plugin that insults a given user"
   version "0.0.1"
 
-  @nouns = ['bat toenails', 'bug spit', 'cat hair', 'fish heads', 'gunk', 'pond scum', 'rat retch',
-            'red dye number-9', 'Sun IPC manuals', 'waffle-house grits', 'yoo-hoo',
-            'squirrel guts', 'snake bait', 'buzzard gizzards', 'cat-hair-balls',
-            'pods', 'armadillo snouts', 'entrails', 'snake snot', 'eel ooze',
-            'toxic waste', 'Stimpy-drool', 'poopy', 'poop', 'craptacular carpet droppings', 'cold sores', 
-            'IE user', 'chicken piss', 'dog vomit', 'dung', 'fat woman\'s stomach-bile', 'guano', 'dog balls', 
-            'seagull puke', 'cat bladders', 'pus', 'urine samples', 'snake assholes', 'rat-farts',
-            'slurpee-backwash', 'jizzum', 'anal warts']
+  @nouns      = ['bat toenails', 'bug spit', 'cat hair', 'fish heads', 'gunk', 'pond scum', 'rat retch',
+                 'red dye number-9', 'Sun IPC manuals', 'waffle-house grits', 'yoo-hoo',
+                 'squirrel guts', 'snake bait', 'buzzard gizzards', 'cat-hair-balls',
+                 'pods', 'armadillo snouts', 'entrails', 'snake snot', 'eel ooze',
+                 'toxic waste', 'Stimpy-drool', 'poopy', 'poop', 'craptacular carpet droppings', 'cold sores', 
+                 'IE user', 'chicken piss', 'dog vomit', 'dung', 'fat woman\'s stomach-bile', 'guano', 'dog balls', 
+                 'seagull puke', 'cat bladders', 'pus', 'urine samples', 'snake assholes', 'rat-farts',
+                 'slurpee-backwash', 'jizzum', 'anal warts']
   
-  @amounts = ['accumulation', 'bucket', 'gob', 'coagulation', 'half-mouthful', 'heap', 'mass', 'mound', 
-              'petrification', 'pile', 'puddle', 'stack', 'thimbleful', 'tongueful', 'ooze', 'quart',
-              'bag', 'plate', 'enema-bucketful', 'ass-full', 'assload']
+  @amounts    = ['accumulation', 'bucket', 'gob', 'coagulation', 'half-mouthful', 'heap', 'mass', 'mound', 
+                 'petrification', 'pile', 'puddle', 'stack', 'thimbleful', 'tongueful', 'ooze', 'quart',
+                 'bag', 'plate', 'enema-bucketful', 'ass-full', 'assload']
   
   @adjectives = ['acidic', 'antique', 'contemptible', 'culturally-unsound', 'despicable', 'evil', 
                  'fermented', 'festering', 'foul', 'fulminating', 'humid', 'impure', 'inept',

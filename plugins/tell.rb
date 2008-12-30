@@ -7,7 +7,7 @@ Plugins.define "Tell" do
     if args[:cmd_args].size == 0
       args[:buddy].send_im("Who am I telling what now?")
     elsif args[:cmd_args].size == 1
-      args[:buddy].send_im("#{args[:cmd_args][0]}, #{args[:speaker].screen_name} wanted me to tell you.....")
+      args[:buddy].send_im("#{args[:cmd_args][0]}, #{args[:speaker].screen_name} wanted me to tell you.....nothing!")
     else
       reciever = args[:cmd_args].shift
       args[:buddy].send_im("#{reciever}, #{args[:speaker].screen_name} wanted me to tell you: #{args[:cmd_args].join(" ")}")

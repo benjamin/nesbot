@@ -19,10 +19,11 @@ Plugins.define "Core" do
       args[:buddy].send_im("You have to give me a plugin name...")
       return
     end
-
-    if Plugins.registered.has_key?(args[:cmd_args][0])
-      Plugins.unregister_plugin(args[:cmd_args][0])
-      args[:buddy].send_im("Plugin #{args[:cmd_args][0]} unregistered successfully")
+    
+    plugin_name = args[:cmd_args][0]
+    if Plugins.registered.has_key?(plugin_name)
+      Plugins.unregister_plugin(plugin_name)
+      args[:buddy].send_im("Plugin #{plugin_name} unregistered successfully")
     else
       args[:buddy].send_im("That plugin doesn't exist.")
     end    
@@ -34,16 +35,16 @@ Plugins.define "Core" do
       return
     end
     
-    if Plugins.registered.has_key?(args[:cmd_args][0])
+    plugin_name = args[:cmd_args][0]
+    if Plugins.registered.has_key?(plugin_name)
       args[:buddy].send_im("That plugin is already registered.")
       return
     end
     
-    plugin_path = "#{BotConfig::PluginDir}/#{args[:cmd_args][0].downcase}.rb"
-    
-    if(File.exist?(plugin_path))
+    plugin_path = "#{BotConfig::PluginDir}/#{plugin_name.downcase}.rb"
+    if File.exist?(plugin_path)
       load plugin_path
-      args[:buddy].send_im("Plugin #{args[:cmd_args][0]} registered successfully")
+      args[:buddy].send_im("Plugin #{plugin_name} registered successfully")
     else
       args[:buddy].send_im("Sorry, I can't find that plugin")
     end
@@ -104,7 +105,6 @@ Plugins.define "Core" do
         args[:speaker].send_im("#{name} Commands: #{commands.sort.join(", ")}") unless commands.empty?
       end
     end
-      
   end
 
   ## Helper methods
