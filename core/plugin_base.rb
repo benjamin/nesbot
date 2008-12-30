@@ -18,9 +18,7 @@ class PluginBase
     return @commands unless @commands.nil?
 
     @commands = []
-    self.public_methods.each do |m|
-      next if m == 'public_methods'
-      
+    self.local_methods.each do |m|      
       s = m.split("_")
       if s[0] == 'admin' || s[0] == 'public'
         type = s.shift

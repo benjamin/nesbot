@@ -5,3 +5,10 @@ class Array
     sort_by{ rand }.slice(0...number)
   end
 end
+
+# Easily print methods local to an object's class - useful for the plugins
+class Object
+  def local_methods
+    (methods - Object.instance_methods).sort
+  end
+end
