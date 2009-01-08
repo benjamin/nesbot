@@ -1,5 +1,5 @@
 Plugins.define "Core" do
-  author "Benjamin Birnabum"
+  author "Benjamin Birnbaum"
   desc "This provides some basic core functionality"
   version "0.0.1"
 

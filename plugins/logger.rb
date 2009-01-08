@@ -1,5 +1,5 @@
 Plugins.define "Logger" do
-  author "Benjamin Birnabum"
+  author "Benjamin Birnbaum"
   desc "Logs activities"
   version "0.0.0"
 

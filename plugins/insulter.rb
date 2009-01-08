@@ -1,5 +1,5 @@
 Plugins.define "Insulter" do
-  author "Benjamin Birnabum"
+  author "Benjamin Birnbaum"
   desc "Plugin that insults a given user"
   version "0.0.1"
 

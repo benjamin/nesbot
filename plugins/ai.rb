@@ -1,7 +1,7 @@
 require 'net/http'
 
 Plugins.define "AI" do
-  author "Benjamin Birnabum"
+  author "Benjamin Birnbaum"
   desc "Chat Bot"
   version "0.0.1"
    

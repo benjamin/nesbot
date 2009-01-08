@@ -1,7 +1,7 @@
 require 'net/http'
 
 Plugins.define "Rhyme" do
-  author "Benjamin Birnabum"
+  author "Benjamin Birnbaum"
   desc "Lets you find rhyming words"
   version "0.0.1"
     
