@@ -9,7 +9,7 @@ Plugins.define "AI" do
                              'falls asleep', 'drools', 'dribbles', 'looks away', 'goes back to doing nothing']
   
   def on_non_directed_message(message, speaker, buddy, command_executed)
-    return if command_executed || message.match(Regexp.new(@bot.my_names.join("|"))).nil?
+    return if command_executed || message.match(Regexp.new(@bot.my_names.join("|"), Regexp::IGNORECASE)).nil?
     
     my_name = @bot.my_names.randomly_pick(1)
     buddy.send_im("*#{my_name} #{@non_directed_responses.randomly_pick(1)}*")
