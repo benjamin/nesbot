@@ -10,8 +10,8 @@ Plugins.define "Fakts" do
   end
   
   def get_random_fakt
-    fact_items = [{:url => "http://www.mentalfloss.com/amazingfactgenerator/", :regex => /amazing_fact_body.+<p>(.+)<\/p>/m, :params => {'p' => rand(1169) + 1}},
-                  {:url => "http://www.randomfunfacts.com/", :regex => /<strong><i>(.+)<\/i><\/strong>/m, :params => {}}]
+    fact_items = [{:url => "http://www.mentalfloss.com/amazingfactgenerator/", :regex => /amazing_fact_body.+<p>(.+)<\/p>/mu, :params => {'p' => rand(1169) + 1}},
+                  {:url => "http://www.randomfunfacts.com/", :regex => /<strong><i>(.+)<\/i><\/strong>/mu, :params => {}}]
                   
     fakt = fact_items.randomly_pick(1)
     response = Net::HTTP.post_form(URI.parse(fakt[:url]), fakt[:params])
