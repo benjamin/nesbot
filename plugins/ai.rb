@@ -6,7 +6,7 @@ Plugins.define "AI" do
   version "0.0.1"
   
   @non_directed_responses = ['farts loudly', 'raises an eyebrow', 'yawns', 'shifts uncomfortably', 'looks around', 'stretches', 'scratches their head',
-                             'falls asleep', 'drools', 'dribbles', 'looks away', 'goes to doing nothing']
+                             'falls asleep', 'drools', 'dribbles', 'looks away', 'goes back to doing nothing']
   
   def on_non_directed_message(message, speaker, buddy, command_executed)
     return if command_executed || message.match(Regexp.new(@bot.my_names.join("|"))).nil?
