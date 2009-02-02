@@ -5,8 +5,8 @@ Plugins.define "AI" do
   desc "Chat Bot"
   version "0.0.1"
   
-  @non_directed_responses = ['farts loudly', 'raises an eyebrow', 'yawns', 'shifts uncomfortably', 'looks around', 'stretches', 'scratches their head',
-                             'falls asleep', 'drools', 'dribbles', 'looks away', 'goes back to doing nothing']
+  @non_directed_responses = ['farts loudly', 'raises an eyebrow', 'yawns', 'shifts uncomfortably', 'looks around', 'stretches', 'scratches its head',
+                             'falls asleep', 'drools', 'dribbles', 'looks away', 'goes back to doing nothing', 'blinks rapidly', 'mumbles']
   
   def on_non_directed_message(message, speaker, buddy, command_executed)
     return if command_executed || message.match(Regexp.new(@bot.my_names.join("|"), Regexp::IGNORECASE)).nil?
