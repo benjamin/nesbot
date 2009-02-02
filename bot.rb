@@ -11,7 +11,7 @@ class Bot
   end
   
   def my_names
-    BotConfig::Nicknames << BotConfig::Name
+    @my_names ||= [BotConfig::Nicknames, BotConfig::Name].flatten
   end
   
   def load_plugins
