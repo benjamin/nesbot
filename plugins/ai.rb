@@ -4,9 +4,15 @@ Plugins.define "AI" do
   author "Benjamin Birnbaum"
   desc "Chat Bot"
   version "0.0.1"
-   
+  
+  @non_directed_responses = ['farts loudly', 'raises an eyebrow', 'yawns', 'shifts uncomfortably', 'looks around', 'stretches', 'scratches their head',
+                             'falls asleep', 'drools', 'dribbles', 'looks away', 'goes to doing nothing']
+  
   def on_non_directed_message(message, speaker, buddy, command_executed)
-    #search for my name somewhere on the line.....
+    return if command_executed || message.match(Regexp.new(@bot.my_names.join("|"))).nil?
+    
+    my_name = @bot.my_names.randomly_pick(1)
+    buddy.send_im("*#{my_name} #{@non_directed_responses.randomly_pick(1)}*")
   end
   
   def on_directed_message(message, speaker, buddy, command_executed)

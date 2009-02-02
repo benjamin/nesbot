@@ -10,6 +10,10 @@ class Bot
     @quit = false
   end
   
+  def my_names
+    BotConfig::Nicknames << BotConfig::Name
+  end
+  
   def load_plugins
     puts "Loading all plugins....."
     Plugins.clear_registered
