@@ -3,6 +3,7 @@ require 'core/plugin_system'
 require 'core/core_extensions'
 require 'config'
 
+#The bot class
 class Bot
   def initialize
     Plugins.bot = self
